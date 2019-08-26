@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities.Tabuleiro
+namespace tabuleiro.Tabuleiro
 {
     class Tabuleiro
     {
@@ -17,9 +17,15 @@ namespace Entities.Tabuleiro
             Pecas = new Peca[linhas, colunas];
         }
 
-        public Peca peca(int linha, int coluna)
+        public Peca Peca(int linha, int coluna)
         {
             return Pecas[linha, coluna];
         } 
+        
+        public void ColocarPeca(Peca p, Posicao pos)
+        {
+            Pecas[pos.Linha, pos.Coluna] = p;
+            p.Posicao = pos;
+        }
     }
 }

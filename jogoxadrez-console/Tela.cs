@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Entities.Tabuleiro;
+using tabuleiro.Tabuleiro;
 
 namespace jogoxadrez_console
 {
@@ -13,13 +13,13 @@ namespace jogoxadrez_console
             {
                 for (int c = 0; c < tab.Colunas; c++)
                 {
-                    if (tab.peca(l, c) == null)
+                    if (tab.Peca(l, c) == null)
                     {
                         Console.Write("- ");
                     }
                     else
                     {
-                        Console.Write(tab.peca(l, c) + " ");
+                        Console.Write(tab.Peca(l, c) + " ");
                     }
                 }
                 Console.WriteLine();
