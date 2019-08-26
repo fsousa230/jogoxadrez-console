@@ -1,5 +1,5 @@
 ﻿using System;
-using Tabuleiro;
+using Entities.Tabuleiro;
 
 namespace jogoxadrez_console
 {
@@ -7,7 +7,8 @@ namespace jogoxadrez_console
     {
         static void Main(string[] args)
         {
-            Posicao p = new Posicao();
+            Tabuleiro tab = new Tabuleiro(8,8);
+            Tela.imprimirTabuleiro(tab);
         }
     }
 }
