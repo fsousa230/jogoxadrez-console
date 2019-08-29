@@ -17,13 +17,34 @@ namespace tabuleiro.Tabuleiro
             Cor = cor;
             QtdeMovimentos = 0;
             Tab = tab;
-        }
-
-        public abstract bool[,] MovimentosPossiveis();
+        }        
 
         public void IncrementarQteMovimentos()
         {
             QtdeMovimentos++;
         }
+
+        public bool ExisteMovimentosPossiveis()
+        {
+            bool[,] mat = MovimentosPossiveis();
+            for (int l = 0; l < Tab.Linhas; l++)
+            {
+                for(int c = 0; c < Tab.Colunas; c++)
+                {
+                    if (mat[l, c])
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool PodeMoverPara(Posicao pos)
+        {
+            return MovimentosPossiveis()[pos.Linha, pos.Coluna];
+        }
+
+        public abstract bool[,] MovimentosPossiveis();
     }
 }
